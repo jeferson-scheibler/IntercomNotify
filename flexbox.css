@@ -1,0 +1,125 @@
+img{
+    width: 100%;
+}
+
+h1{
+    color: brown;
+    font-size: 20rem;
+}
+
+.boxes{
+    /* height: calc(100vh-(7rem*2)); */
+    height: calc(100vh);
+    position: relative;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    align-content: center;
+    gap: 2rem 5rem;
+}
+
+.box{
+    min-height: 10rem;
+    min-width: 20rem;
+    padding: 1.5rem;
+    border: 1rem solid steelblue;
+    border-radius: 0.5rem;
+    background-color: aquamarine;
+    color: white;
+    font-size: 5rem;
+    /* flex-basis: calc(33.33% - 5rem);  */
+    flex: 1;
+
+    /* alinhar elementos dentro das box */
+    display: flex;
+    gap: 2rem 5rem;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+main{
+    /* padding: 10rem 0; */
+}
+
+@media screen and (min-width: 1000px) {
+    img{
+        height: 50vh;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 999px){
+    .box{
+        display: none;
+    }
+    h1{
+        color: blueviolet;
+    }
+    img{
+        height: 80vh;
+    }
+}
+
+@media print {
+    img{
+        display: none;
+    }
+}
+
+button{
+    cursor: pointer;
+    /* visibility: hidden; */
+    transition: all .2s ease-in-out, background-color .5s ease-in-out;   
+}
+
+[data-button="anima"]:hover{
+    background-color: blue;
+    color: aliceblue;
+    transform: scale(1.2);
+}
+
+[data-button="anima2"]{
+    background-color: red;
+    animation: pulse .8s infinite;
+    animation-direction: alternate;
+    transform: scale(1);
+}
+
+@keyframes pulse {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3);
+        opacity: .6;
+    }
+    /* 100%{
+        transform: scale(1);
+        opacity: 1;
+    } */
+}
+
+.load_conteiner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-spinner{
+   margin-top: 3rem;
+   margin: 4rem;
+   font-size: 8rem;
+   color: blue;
+   animation: load 1s infinite; 
+}
+
+@keyframes load{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(180deg);
+    }
+}
